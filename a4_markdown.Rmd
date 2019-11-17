@@ -52,13 +52,11 @@ abundance <- ggplot(data = lobster_abundance, aes(x = year, y = annual_count, fi
        x = "Year",
        y = "Lobster Count") +
   scale_x_continuous(breaks = seq(2012, 2018, 2)) +
-  facet_wrap(~site_names, scales = "free") +
+  facet_wrap(~site_names, scales = "free_x") +
    theme(panel.grid.minor.x = element_blank(), 
         panel.grid.minor.y = element_blank())
 
 abundance
-  
-
 ```
 
 B. Lobster Size shifts from 2012 - 2018
