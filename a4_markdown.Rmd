@@ -1,8 +1,16 @@
 ---
-title: "Assignment 4"
-author: "Julia Dagum and Kelsie Fronheiser"
+title: "Spiny lobster abundance, community size structure, and fishing pressure along the Santa Barbara coast (2012 - 2018)"
+author: "Co-authors: Julia Dagum and Kelsie Fronheiser"
 output: html_document
 ---
+
+### Introduction
+
+### Data and Methods
+
+### Results
+
+A. 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -51,6 +59,15 @@ abundance
 
 ```
 
+B. Lobster Size shifts from 2012 - 2018
+
+It interesting to note the shift in size ranges for spiny lobsters from 2012 - 2018 at the Isla Vista and Naples sites. These two sites are Marine Protected Areas (MPAs), and show a distinct increase in size trends over time. 
+
+The lobster sizes are normally distributed and seem to be centered around a mean with little skew at most sites, however, there are some outliers in the data from Carpenteria and Isla Vista that skew the mean positively. 
+
+Another interesting trend seems to be that at every site, with the exception of Isla Vista, the spread of the data seems to have slightly decreased from 2012 - 2018 and there are more observations closer to the mean.
+
+
 ```{r}
 
 # Wrangle data for graph 2 - size distribution in 2012 and 2018
@@ -88,7 +105,7 @@ density <- ggplot(data = lobster_size, aes(x = size_mm, group = as.character(yea
   labs(x = "Size (mm)", 
        y = "Density", 
        fill = "Year", 
-       title = "Lobster Size in 2012 and 2018 at Five Locations in Santa Barbara County") 
+       title = "Lobster Size in 2012 and 2018 by Marine Site Location") 
 
 
   # theme(axis.text.y = element_blank(),
@@ -98,18 +115,24 @@ density <- ggplot(data = lobster_size, aes(x = size_mm, group = as.character(yea
 
 density
 
-density <- ggplot(data = lobster_size, aes(x = size_mm, group = as.character(year), fill = as.character(year))) +
-    geom_density(adjust=1.5, alpha=.4) +
-    facet_wrap(~site_name) + 
-  theme_bw() +
-  labs(x = "Size (mm)", 
-       y = "Density") 
-
-  # theme(axis.text.y = element_blank(),
-  #       axis.ticks.y = element_blank())
-
-
-
-density
+# density <- ggplot(data = lobster_size, aes(x = size_mm, group = as.character(year), fill = as.character(year))) +
+#     geom_density(adjust=1.5, alpha=.4) +
+#     facet_wrap(~site_name) + 
+#   theme_bw() +
+#   labs(x = "Size (mm)", 
+#        y = "Density") 
+# 
+#   # theme(axis.text.y = element_blank(),
+#   #       axis.ticks.y = element_blank())
+# 
+# 
+# 
+# density
 
 ```
+
+
+### Summary
+
+### References
+
