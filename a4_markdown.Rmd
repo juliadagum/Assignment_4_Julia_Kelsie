@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(janitor)
 library(knitr)
-library(DT)
+
 
 lobster_data <- read.csv("lobster_abundance_sbc_lter.csv", 
                          na = -99999) %>% 
@@ -186,6 +186,7 @@ ttest_mpa_byyear <- t.test(mpa_2012, mpa_2018)
 # For non-MPA sites only, is there a significant mean size difference in lobsters observed in 2012 vs. 2018?
 
 ttest_nonmpa_byyear <- t.test(nonmpa_2012, nonmpa_2018)
+ttest_nonmpa_byyear 
 
 
 ```
