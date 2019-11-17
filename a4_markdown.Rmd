@@ -131,6 +131,20 @@ density
 
 ```
 
+```{r}
+# Wrangle data to combine MPA vs. non-MPA sites to compare mean lobster sizes in 2012 and 2018
+
+mpa_size_summary <- lobster_size %>% 
+  mutate(
+    mpa = dplyr::case_when(
+      site %in% c("IVEE", "NAPL") ~ "yes", 
+      site %in% c("AQUE", "CARP", "MOHK") ~ "no")) %>% 
+  group_by(mpa, year) %>% 
+  summarize(mean_size = mean(size_mm))
+
+
+```
+
 
 ### Summary
 
